@@ -32,11 +32,11 @@ const responseFilePath = path.join(os.homedir(), 'Documents', 'fusion_response.t
 
 class FixedFusion360MCPServer {
     constructor() {
-        logDebug('Initializing Complete Fusion360MCPServer...');
+        logDebug('Initializing Complete FusionMCPServer...');
         this.server = new Server(
             {
                 name: 'fusion-mcp-server-complete',
-                version: '5.0.0',
+                version: '0.8.8',
             },
             {
                 capabilities: {
@@ -522,11 +522,138 @@ class FixedFusion360MCPServer {
                 { name: 'select_all_bodies', description: 'ドキュメント内のすべてのボディを選択します。', inputSchema: { type: 'object', properties: {} } },
                 { name: 'select_all_features', description: 'タイムライン上のすべてのフィーチャを選択します。', inputSchema: { type: 'object', properties: {} } },
                 
+                // === Body Information Tools ===
+                {
+                    name: 'get_bounding_box',
+                    description: '指定したボディのバウンディングボックス情報を取得します。',
+                    inputSchema: {
+                        type: 'object',
+                        properties: {
+                            body_name: { 
+                                type: 'string', 
+                                description: '情報を取得するボディの名前。' 
+                            }
+                        },
+                        required: ['body_name']
+                    }
+                },
+                {
+                    name: 'get_body_center',
+                    description: '指定したボディの中心点情報（幾何学的中心、重心、バウンディング中心）を取得します。',
+                    inputSchema: {
+                        type: 'object',
+                        properties: {
+                            body_name: { 
+                                type: 'string', 
+                                description: '情報を取得するボディの名前。' 
+                            }
+                        },
+                        required: ['body_name']
+                    }
+                },
+                {
+                    name: 'get_body_dimensions',
+                    description: '指定したボディの詳細寸法情報（長さ、幅、高さ、体積、表面積）を取得します。',
+                    inputSchema: {
+                        type: 'object',
+                        properties: {
+                            body_name: { 
+                                type: 'string', 
+                                description: '情報を取得するボディの名前。' 
+                            }
+                        },
+                        required: ['body_name']
+                    }
+                },
+                {
+                    name: 'get_faces_info',
+                    description: '指定したボディの面情報（タイプ、面積、法線、中心点など）を取得します。',
+                    inputSchema: {
+                        type: 'object',
+                        properties: {
+                            body_name: { 
+                                type: 'string', 
+                                description: '情報を取得するボディの名前。' 
+                            }
+                        },
+                        required: ['body_name']
+                    }
+                },
+                {
+                    name: 'get_edges_info',
+                    description: '指定したボディのエッジ情報（タイプ、長さ、方向、始点・終点など）を取得します。',
+                    inputSchema: {
+                        type: 'object',
+                        properties: {
+                            body_name: { 
+                                type: 'string', 
+                                description: '情報を取得するボディの名前。' 
+                            }
+                        },
+                        required: ['body_name']
+                    }
+                },
+                {
+                    name: 'get_mass_properties',
+                    description: '指定したボディの質量特性（体積、質量、重心、慣性モーメント）を取得します。',
+                    inputSchema: {
+                        type: 'object',
+                        properties: {
+                            body_name: { 
+                                type: 'string', 
+                                description: '情報を取得するボディの名前。' 
+                            },
+                            material_density: { 
+                                type: 'number', 
+                                default: 1.0, 
+                                description: '材料密度 (g/cm³)。質量計算に使用されます。' 
+                            }
+                        },
+                        required: ['body_name']
+                    }
+                },
+                {
+                    name: 'get_body_relationships',
+                    description: '2つのボディ間の位置関係（距離、干渉、相対位置など）を取得します。',
+                    inputSchema: {
+                        type: 'object',
+                        properties: {
+                            body_name: { 
+                                type: 'string', 
+                                description: '基準となるボディの名前。' 
+                            },
+                            other_body_name: { 
+                                type: 'string', 
+                                description: '比較対象のボディの名前。' 
+                            }
+                        },
+                        required: ['body_name', 'other_body_name']
+                    }
+                },
+                {
+                    name: 'measure_distance',
+                    description: '2つのボディ間の距離を測定します（重心間距離とバウンディングボックス間クリアランス）。',
+                    inputSchema: {
+                        type: 'object',
+                        properties: {
+                            body_name1: { 
+                                type: 'string', 
+                                description: '距離測定する1つ目のボディの名前。' 
+                            },
+                            body_name2: { 
+                                type: 'string', 
+                                description: '距離測定する2つ目のボディの名前。' 
+                            }
+                        },
+                        required: ['body_name1', 'body_name2']
+                    }
+                },
+                
                 // === Utility Tools ===
                 { name: 'delete_selection_features', description: '選択したフィーチャをタイムラインから削除します。', inputSchema: { type: 'object', properties: {} } },
                 { name: 'debug_coordinate_info', description: '座標系や単位に関するデバッグ情報を出力します。', inputSchema: { type: 'object', properties: { show_details: { type: 'boolean', default: true, description: '詳細情報を表示するかどうか。' } } } }
             ];
-            logDebug(`Returning ${tools.length} tools`);
+            logDebug(`Returning ${tools.length} tools (including body info functions)`);
             return { tools };
         });
 
