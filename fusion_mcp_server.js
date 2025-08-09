@@ -448,20 +448,50 @@ class FixedFusion360MCPServer {
                             quantity_one: { type: 'number', default: 2, description: '1方向目の個数。' },
                             distance_one: { type: 'number', default: 10, description: '1方向目の距離 (mm)。' },
                             direction_one_axis: { type: 'string', enum: ['x', 'y', 'z'], default: 'x', description: '1方向目の軸。' },
-                            direction_one_type: { type: 'string', enum: ['one_direction', 'symmetric'], default: 'one_direction', description: '1方向目のパターンタイプ。' },
                             quantity_two: { type: 'number', default: 1, description: '2方向目の個数（1Dパターンの場合は1）。' },
                             distance_two: { type: 'number', default: 10, description: '2方向目の距離 (mm)。' },
                             direction_two_axis: { type: 'string', enum: ['x', 'y', 'z'], default: 'y', description: '2方向目の軸。' },
-                            direction_two_type: { type: 'string', enum: ['one_direction', 'symmetric'], default: 'one_direction', description: '2方向目のパターンタイプ。' },
                             new_body_base_name: { type: 'string', description: '新しいボディのベース名（任意）。' }
                         },
                         required: ['source_body_name', 'quantity_one', 'distance_one', 'direction_one_axis']
                     }
                 },
                 // === Modification Tools ===
-                { name: 'add_fillet', description: '選択したエッジにフィレットを追加します。', inputSchema: { type: 'object', properties: { radius: { type: 'number', default: 1, description: 'フィレット半径 (mm)。' } } } },
-                { name: 'add_chamfer', description: '選択したエッジに面取りを追加します。', inputSchema: { type: 'object', properties: { distance: { type: 'number', default: 1, description: '面取り距離 (mm)。' } } } },
-                {
+				{
+					name: 'add_fillet',
+					description: '指定したボディの特定のエッジにフィレットを追加します。',
+					inputSchema: {
+						type: 'object',
+						properties: {
+							body_name: { type: 'string', description: 'フィレットを適用するボディの名前。' },
+							radius: { type: 'number', default: 1, description: 'フィレット半径 (mm)。' },
+							edge_indices: {
+								type: 'array',
+								description: 'フィレットを適用するエッジのインデックス番号のリスト。get_edges_infoで確認できます。省略するとボディの全ての外周エッジが対象になります。',
+								items: { type: 'integer' }
+							}
+						},
+						required: ['body_name', 'radius']
+					}
+				},
+				{
+					name: 'add_chamfer',
+					description: '指定したボディの特定のエッジに面取りを追加します。',
+					inputSchema: {
+						type: 'object',
+						properties: {
+							body_name: { type: 'string', description: '面取りを適用するボディの名前。' },
+							distance: { type: 'number', default: 1, description: '面取り距離 (mm)。' },
+							edge_indices: {
+								type: 'array',
+								description: '面取りを適用するエッジのインデックス番号のリスト。get_edges_infoで確認できます。省略するとボディの全ての外周エッジが対象になります。',
+								items: { type: 'integer' }
+							}
+						},
+						required: ['body_name', 'distance']
+					}
+				},
+				{
                     name: 'combine_selection',
                     description: '選択した複数のボディを結合（ブール演算）します。最初の選択がターゲットになります。',
                     inputSchema: {
@@ -505,7 +535,6 @@ class FixedFusion360MCPServer {
                 { name: 'rotate_by_name', description: '名前でボディを回転します。', inputSchema: { type: 'object', properties: { body_name: { type: 'string', description: '回転するボディ名。' }, axis: { type: 'string', enum: ['x', 'y', 'z'], default: 'z', description: '回転軸。' }, angle: { type: 'number', default: 90, description: '回転角度（度数）。' }, cx: { type: 'number', default: 0, description: '回転中心のX座標 (mm)。' }, cy: { type: 'number', default: 0, description: '回転中心のY座標 (mm)。' }, cz: { type: 'number', default: 0, description: '回転中心のZ座標 (mm)。' } }, required: ['body_name'] } },
                 
                 // === Selection Tools ===
-                { name: 'select_edges', description: 'ボディ名でエッジを選択します。', inputSchema: { type: 'object', properties: { body_name: { type: 'string', description: '対象のボディ名。' }, edge_type: { type: 'string', enum: ['all', 'circular'], default: 'all', description: '選択するエッジのタイプ。' } }, required: ['body_name'] } },
                 { name: 'select_body', description: '名前でボディを1つ選択します。', inputSchema: { type: 'object', properties: { body_name: { type: 'string', description: '選択するボディ名。' } }, required: ['body_name'] } },
                 {
                     name: 'select_bodies',
