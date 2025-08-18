@@ -1,6 +1,6 @@
 # Fusion MCP Server for Claude Desktop
 
-**バージョン: 0.8.8 (Beta) ファイル連携バージョン**
+**バージョン: 0.7.80 (Beta) ファイル連携バージョン**
 
 このプロジェクトは、**Claude Desktop**がAutodesk Fusion を直接操作するためのModel Context Protocol (MCP)サーバーです。このツールをClaude Desktopに追加することで、チャットのプロンプトを通じて3Dモデルの作成、編集、情報取得が可能になります。
 
