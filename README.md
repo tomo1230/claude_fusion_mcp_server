@@ -40,7 +40,7 @@
 ### Step 2: MCPサーバーのインストール
 1.  任意の場所にこのリポジトリをクローン（またはダウンロード）します。
     ```bash
-    git clone [<repository_url>](https://github.com/tomo1230/claude_fusion_mcp_server)
+    git clone https://github.com/tomo1230/claude_fusion_mcp_server
     ```
 2.  ターミナルでそのディレクトリに移動し、依存関係をインストールします。
     ```bash
