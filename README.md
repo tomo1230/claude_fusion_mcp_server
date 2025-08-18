@@ -51,7 +51,15 @@
 ### Step 3: Claude Desktopへのツール追加
 1.  Claude Desktopを開き、左上のツールメニューからファイル＞設定の画面に移動します。
 2.  「設定を編集」のボタンをクリックします。
-3.  先ほどクローンした**リポジトリのclaudeフォルダにあるclaude_desktop_config.json**を参考に内容を追加します。Claude Desktopが自動的に `fusion_mcp_server.js` を認識します。
+3.  先ほどクローンした**リポジトリのclaudeフォルダにあるclaude_desktop_config.json**を参考に内容を追加します。
+   Claude Desktopが自動的に `fusion_mcp_server.js` を認識します。
+
+<img width="743" height="588" alt="スクリーンショット 2025-08-19 000511" src="https://github.com/user-attachments/assets/22c96da8-4020-4a86-874a-1d0b2678a554" />
+
+<img width="530" height="290" alt="スクリーンショット 2025-08-18 235132" src="https://github.com/user-attachments/assets/4ffcaeb2-65d5-4aa5-b227-db32129c52e4" />
+
+<img width="547" height="371" alt="スクリーンショット 2025-08-18 235204" src="https://github.com/user-attachments/assets/4b2bee93-1233-424e-845b-d96ee30eccf7" />
+
 
 ### Step 4: Claude Desktopでの使用
 セットアップが完了すれば、チャットでFusion を操作できます。
