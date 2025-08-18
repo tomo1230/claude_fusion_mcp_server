@@ -4,7 +4,7 @@
 
 このプロジェクトは、**Claude Desktop**がAutodesk Fusion を直接操作するためのModel Context Protocol (MCP)サーバーです。このツールをClaude Desktopに追加することで、チャットのプロンプトを通じて3Dモデルの作成、編集、情報取得が可能になります。
 
-このサーバーは、Fusion 内で動作する[対応するPythonアドイン](<リンク_to_Pythonアドインのリポジトリ>)と連携して機能します。
+このサーバーは、Fusion 内で動作する[対応するPythonアドイン fusion_mcp_server](<https://github.com/tomo1230/claude_fusion_mcp_server/>)と連携して機能します。
 
 - **作者:** Kanbara Tomonori
 - **X (旧Twitter):** [@tomo1230](https://x.com/tomo1230)
