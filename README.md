@@ -124,11 +124,14 @@ Fusion 360やBlenderなどのCADソフトとAI（ChatGPTやClaude）を連携さ
 
 **https://www.youtube.com/@ModerundesuAI**
 
-[![「サイコロを設計して」Claude AI＆Autodesk Fusion API 連携🤖AIモデリングチャレンジ！💪](https://github.com/user-attachments/assets/c5be6840-3321-4431-8342-8ce050bc5314)](https://youtu.be/S_-xYwK5HUc?si=JWE3yv5mxRLGJaXd)
+**「サイコロを設計して」Claude AI＆Autodesk Fusion API 連携🤖AIモデリングチャレンジ！💪**
+[![](https://github.com/user-attachments/assets/c5be6840-3321-4431-8342-8ce050bc5314)](https://youtu.be/S_-xYwK5HUc?si=JWE3yv5mxRLGJaXd)
 
-[![「400mlのコップを設計して」Claude AI＆Autodesk Fusion API 連携🤖AIモデリングチャレンジ！💪](https://github.com/user-attachments/assets/820652c7-1199-4ed2-9589-4fc2b1df5a98)](https://youtu.be/abfEWtMKRV4?si=gTVDwvkIkyt81jnb)
+**「400mlのコップを設計して」Claude AI＆Autodesk Fusion API 連携🤖AIモデリングチャレンジ！💪**
+[![](https://github.com/user-attachments/assets/820652c7-1199-4ed2-9589-4fc2b1df5a98)](https://youtu.be/abfEWtMKRV4?si=gTVDwvkIkyt81jnb)
 
-[![「使えるコマンドのテストをして」Claude AI MCP ＆ Autodesk Fusion API 連携🤖AIモデリングチャレンジ！💪](https://github.com/user-attachments/assets/aded31be-f6b3-45bb-9461-f1cd3c40ca85)](https://youtu.be/Qn-Skeh3o2c?si=7xKrM_bA7IbXT47-)
+**「使えるコマンドのテストをして」Claude AI MCP ＆ Autodesk Fusion API 連携🤖AIモデリングチャレンジ！💪**
+[![](https://github.com/user-attachments/assets/aded31be-f6b3-45bb-9461-f1cd3c40ca85)](https://youtu.be/Qn-Skeh3o2c?si=7xKrM_bA7IbXT47-)
 
 ---
 
