@@ -35,12 +35,12 @@
 -   **Claude Desktop**: アプリケーションがインストールされていること。
 -   **Node.js**: v18以降がインストールされていること。
 -   **Autodesk Fusion **: 最新版がインストールされていること。
--   **Fusion  Pythonアドイン**: **これが最も重要です。**[対応するPythonアドイン](<リンク_to_Pythonアドインのリポジトリ>)がFusion にインストールされ、ツールバーの**「連携開始」**ボタンが押されている状態にしてください。
+-   **Fusion  Pythonアドイン**: **これが最も重要です。**[対応するPythonアドイン fusion_mcp_server](<https://github.com/tomo1230/fusion_mcp_server>)がFusion にインストールされ、ツールバーの**「連携開始」**ボタンが押されている状態にしてください。
 
 ### Step 2: MCPサーバーのインストール
 1.  任意の場所にこのリポジトリをクローン（またはダウンロード）します。
     ```bash
-    git clone <repository_url>
+    git clone [<repository_url>](https://github.com/tomo1230/claude_fusion_mcp_server)
     ```
 2.  ターミナルでそのディレクトリに移動し、依存関係をインストールします。
     ```bash
