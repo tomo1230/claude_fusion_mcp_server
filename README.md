@@ -45,7 +45,7 @@
 2.  ターミナルでそのディレクトリに移動し、依存関係をインストールします。
     ```bash
     cd <repository_directory>
-    npm install
+    npm install @modelcontextprotocol/sdk
     ```
 
 ### Step 3: Claude Desktopへのツール追加
