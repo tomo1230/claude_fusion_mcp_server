@@ -33,7 +33,7 @@
 
 ### Step 1: 前提条件の確認
 -   **Claude Desktop**: アプリケーションがインストールされていること。（<https://claude.ai/download>）
--   **Node.js**: v18以降がインストールされていること。
+-   **Node.js**: v18以降がインストールされていること。(<https://nodejs.org/ja/download>)
 -   **Autodesk Fusion **: 最新版がインストールされていること。
 -   **Fusion  Pythonアドイン**: **これが最も重要です。**[対応するPythonアドイン fusion_mcp_server](<https://github.com/tomo1230/fusion_mcp_server>)がFusion にインストールされ、ツールバーの**「連携開始」**ボタンが押されている状態にしてください。
 
