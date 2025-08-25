@@ -17,7 +17,7 @@
 このツールは、Claude Desktopとの対話を通じて、直感的かつ自然言語ベースでFusion のモデリング作業を行うためのブリッジとして機能します。
 
 **処理フロー:**
-1.  ユーザーがClaude Desktopで `@Fusion360` のようなツール名を指定してプロンプトを送信します。（例: `@Fusion360 50mmの立方体を作って`）
+1.  ユーザーがClaude Desktopで `@Fusion` のようなツール名を指定してプロンプトを送信します。（例: `@Fusion 50mmの立方体を作って`）
 2.  Claude Desktopは、このNode.jsサーバーを子プロセスとして起動し、`CallToolRequest` を送信します。
 3.  Node.jsサーバーはリクエストをJSONコマンドに変換し、`~/Documents/fusion_command.txt` に書き込みます。
 4.  Fusion 内で起動しているPythonアドインがこのファイルを検知し、Fusion のAPIを実行します。
